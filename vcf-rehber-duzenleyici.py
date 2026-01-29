@@ -1,3 +1,24 @@
+# ================= AUTO DEPENDENCY INSTALL =================
+import sys
+import subprocess
+
+REQUIRED_PACKAGES = [
+    "ttkbootstrap==1.14.6",
+    "Pillow"
+]
+
+def install_and_import(package):
+    try:
+        __import__(package.split("==")[0])
+    except ImportError:
+        print(f"[+] {package} bulunamadı, yükleniyor...")
+        subprocess.check_call(
+            [sys.executable, "-m", "pip", "install", package],
+            stdout=subprocess.DEVNULL
+        )
+
+for pkg in REQUIRED_PACKAGES:
+    install_and_import(pkg)
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from ttkbootstrap import Style
