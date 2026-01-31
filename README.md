@@ -37,6 +37,18 @@ Bozuk karakterler, mükerrer numaralar ve karmaşık telefon formatları artık 
 - 💾 **Temiz VCF Dışa Aktarma**
   - Düzenlenmiş rehberi yeni `.vcf` dosyası olarak kaydetme
 
+- 📊 **Excel İçe/Dışa Aktarma**
+  - Excel dosyalarından rehber içe aktarma
+  - Şık formatlı Excel çıktısı
+  - Otomatik istatistik sayfası oluşturma
+  - Mükerrer kontrolü ve normalizasyon
+
+- 📊 **Detaylı İstatistikler**
+  - Toplam kişi sayısı ve mükerrer analizi
+  - İsim istatistikleri (en uzun/kısa, ortalama)
+  - Numara formatı dağılımı
+  - İsimsiz kişi tespiti
+
 - 🎨 **Modern Dark UI**
   - `ttkbootstrap` destekli karanlık tema
 
@@ -64,10 +76,17 @@ git clone https://github.com/ebubekirbastama/modern-vcf-rehber-duzenleyici.git
 cd modern-vcf-rehber-duzenleyici
 ```
 
-### 3️⃣ Gerekli Paketi Yükle
+### 3️⃣ Gerekli Paketleri Yükle
 
+**Otomatik Yükleme** (Önerilen):
 ```bash
-pip install ttkbootstrap
+python vcf-rehber-duzenleyici.py
+```
+İlk çalıştırmada gerekli paketler otomatik yüklenecektir.
+
+**Manuel Yükleme**:
+```bash
+pip install ttkbootstrap openpyxl Pillow
 ```
 
 ### 4️⃣ Çalıştır
@@ -102,7 +121,8 @@ python app.py
 
 ## 🗺️ Yol Haritası
 
-- [ ] CSV içe / dışa aktarma
+- [x] ~~Rehber istatistikleri ve analiz~~
+- [x] ~~Excel içe / dışa aktarma~~
 - [ ] Toplu kişi düzenleme
 - [ ] Ülke kodu seçimi
 - [ ] Otomatik yedekleme
